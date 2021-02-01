@@ -20,6 +20,7 @@ body {
     height: 100vh;
     line-height: 1.45;
     font-family: var(--main-font-stack);
+    color: var(--clear);
 }
 
 /* general container */
@@ -27,6 +28,8 @@ body {
     display: flex;
     flex-flow: column;
     height: 100%;
+    background: url(images/rainy.webp) center no-repeat;
+    background-size: cover;
 }
 
 /* header */
@@ -34,7 +37,45 @@ body {
     flex: 0 1 auto;
     display: flex;
     justify-content: space-between;
-    padding: 2rem 7rem;
+    padding: 3rem 7rem;
+}
+
+/* search */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+#search {
+    font-size: 1.7rem;
+    padding: 1rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    border-bottom: 1px solid #979797;
+}
+
+#search:focus {
+    border-bottom: 1px solid #76938F;
+}
+
+#search::placeholder {
+    color: #dadada;
+}
+
+#search::-webkit-search-cancel-button {display: none;}
+
+button[type="submit"] {
+    font-size: 2rem;
+    padding: 1.3rem 1.5rem;
+    border-bottom: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 1rem;
+    background-color: var(--clear);
+    color: #111;
 }
 
 /* main */
@@ -47,21 +88,39 @@ body {
 }
 
 .main-content {
-    width: 50rem;
+    width: 90rem;
+    max-width: 100%;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 10%;
+    margin: 2rem;
+    margin-bottom: 7%;
+    border-radius: 1rem;
+    background: rgba(255,255,255,.2);
+    backdrop-filter: blur(4rem);
+    padding: 4rem 4rem 6rem;
 }
 
 /* weather-temp */
 .temp-icon {
     font-size: 7rem;
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
+    line-height: .5;
 }
 
 .temp {
+    width: max-content;
+    position: relative;
     font-size: 10rem;
     line-height: initial;
+    margin: 0 auto;
+}
+
+.temp::after {
+    content: '°';
+    position: absolute;
+    top: 0;
+    right: -2.8rem;
+    font-size: 6.2rem;
 }
 
 .city {
@@ -69,12 +128,27 @@ body {
 }
 
 .country {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-left: 1.5px;
 }
 
 .weather-data {
+    width: max-content;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 4rem;
+    margin-top: 5rem;
+}
+
+.weather-data > div {
+    padding: 2rem 7rem;
+    border-right: 1px solid #979797;
+}
+
+.weather-data > div:last-child {
+    border: none;
+}
+
+.weather-data h3 {
+    margin-bottom: 2rem;
 }
