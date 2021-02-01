@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --main-font-stack: Lato, sans-serif;
+    /* color */
+    --clear: #f7f7f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    line-height: 1.45;
+    font-family: var(--main-font-stack);
+}
+
+/* general container */
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+/* header */
+.header {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 7rem;
+}
+
+/* main */
+.main {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.main-content {
+    width: 50rem;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+/* weather-temp */
+.temp-icon {
+    font-size: 7rem;
+    padding-bottom: 1rem;
+}
+
+.temp {
+    font-size: 10rem;
+    line-height: initial;
+}
+
+.city {
+    font-size: 4.5rem;
+}
+
+.country {
+    font-size: 2rem;
+}
+
+.weather-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4rem;
+}

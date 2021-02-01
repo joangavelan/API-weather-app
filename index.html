@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="icons/css/weather-icons.min.css">
+  <script src="https://kit.fontawesome.com/542ea1a396.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <!-- logo -->
+      <h1 class="logo">weather app</h1>
+      <!-- search -->
+      <form class="search-form">
+        <input type="search" class="search">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </header>
+    <!-- main -->
+    <main class="main">
+      <div class="main-content">
+        <!-- weather temp -->
+        <div class="weather-temp">
+          <div class="temp-icon"><i class="wi wi-rain-wind"></i></div>
+          <div class="temp">23°</div>
+          <p class="city">Lima<span class="country">,PE</span></p>
+          <div class="timezone">20:35 Mon. 31 Jan '21</div>
+        </div>
+        <!-- weather data -->
+        <div class="weather-data">
+            <!-- weather -->
+          <div class="weather-box">
+            <h3>Weather</h3>
+            <p class="weather">Light Rain</p>
+          </div>
+            <!-- humidity -->
+          <div class="humidity-box">
+            <h3>Humidity</h3>
+            <p class="humidity">73%</p>
+          </div>
+          <!-- wind -->
+          <div class="wind-box">
+            <h3>Wind</h3>
+            <p class="wind">24km/h</p>
+          </div>
+        </div>
+      </main>
+      </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
