@@ -36,6 +36,7 @@ body {
 .header {
     flex: 0 1 auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 3rem 7rem;
 }
@@ -84,7 +85,6 @@ button[type="submit"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: fit-content;
 }
 
 .main-content {
@@ -93,7 +93,7 @@ button[type="submit"] {
     font-size: 2rem;
     text-align: center;
     margin: 2rem;
-    margin-bottom: 7%;
+    margin-bottom: 5%;
     border-radius: 1rem;
     background: rgba(255,255,255,.2);
     backdrop-filter: blur(4rem);
@@ -101,13 +101,13 @@ button[type="submit"] {
 }
 
 /* weather-temp */
-.temp-icon {
+.weather-temp-icon {
     font-size: 7rem;
     padding-bottom: 3rem;
     line-height: .5;
 }
 
-.temp {
+.weather-temp {
     width: max-content;
     position: relative;
     font-size: 10rem;
@@ -115,7 +115,7 @@ button[type="submit"] {
     margin: 0 auto;
 }
 
-.temp::after {
+.weather-temp::after {
     content: '°';
     position: absolute;
     top: 0;
@@ -129,7 +129,7 @@ button[type="submit"] {
 
 .country {
     font-size: 1.8rem;
-    margin-left: 1.5px;
+    margin-left: -2px;
 }
 
 .weather-data {
