@@ -28,8 +28,9 @@ body {
     display: flex;
     flex-flow: column;
     height: 100%;
-    background: url(images/rainy.webp) center no-repeat;
+    background: url(images/day/snow.jpg) center no-repeat;
     background-size: cover;
+    transition: background 1s ease-in-out;
 }
 
 /* header */
@@ -43,40 +44,44 @@ body {
 
 /* search */
 .search-form {
-    display: flex;
-    align-items: center;
+    position: relative;
 }
 
 #search {
     font-size: 1.7rem;
-    padding: 1rem;
-    background-color: transparent;
+    padding: 1rem 1.5rem;
     outline: none;
     border: none;
-    color: white;
-    border-bottom: 1px solid #979797;
-}
-
-#search:focus {
-    border-bottom: 1px solid #76938F;
+    border-radius: 2rem;
+    color: #111;
 }
 
 #search::placeholder {
-    color: #dadada;
+    color: rgb(88, 88, 88);
 }
 
 #search::-webkit-search-cancel-button {display: none;}
 
 button[type="submit"] {
-    font-size: 2rem;
-    padding: 1.3rem 1.5rem;
-    border-bottom: none;
+    position: absolute;
+    padding: 1.1rem 1.5rem;
+    top: 0;
+    right: 0;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    border: none;
     outline: none;
-    border-radius: 50%;
     cursor: pointer;
-    margin-left: 1rem;
-    background-color: var(--clear);
-    color: #111;
+    color: #222;
+    background: transparent;
+}
+
+.error-message {
+    display: none;
+    position: absolute;
+    font-size: 1.5rem;
+    margin-top: 8px;
+    margin-left: 2px;
 }
 
 /* main */

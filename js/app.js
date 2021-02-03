@@ -1,5 +1,6 @@
 const App = (() => {
     //DOM
+    const containerEl = document.querySelector('.container');
     const tempIcon = document.querySelector('.weather-temp-icon')
     const tempEl = document.querySelector('.weather-temp');
     const cityEl = document.querySelector('.city');
@@ -19,6 +20,12 @@ const App = (() => {
     const toCelsius = (num) => Math.round(num - 273.1);
     //converts wind speed from m/s to km/h
     const toKmh = (num) => +((num * 3.6).toFixed(1));
+    //discovers if its day or night time based on the hour
+    const getTime = (timezone) => {
+        const hour = +(timezone.slice(0, 2).replace(':', ''));
+        const time = (hour >= 6 && hour <= 19) ? 'day' : 'night';
+        return time;
+    }
     //gets timezone by seconds
     const getTimezone = (seconds) => {
         const date = new Date();
@@ -68,8 +75,7 @@ const App = (() => {
     const getIcon = (timezone, weather) => {
         weather = weather.toLowerCase();
         //finding out what time is it to set day or night icon
-        const hour = +(timezone.slice(0, 2).replace(':', ''));
-        const time = (hour >= 6 && hour <= 19) ? 'day' : 'night';
+        const time = getTime(timezone);
         //formatting to get valid weather name for icons
         switch(weather) {
             case 'clouds':
@@ -89,6 +95,7 @@ const App = (() => {
                 weather = (time === 'night') ? weather : 'sunny';
                 break;
             case 'smoke':
+                weather = 'smoke';
                 return `<i class="wi wi-smoke">`; 
             case 'dust':
                 return `<i class="wi wi-dust">`;
@@ -111,6 +118,7 @@ const App = (() => {
         weatherEl.innerHTML = obj.weather;
         humidityEl.innerHTML = `${obj.humidity}%`;
         windEl.innerHTML = `${obj.wind}km/h`;
+        containerEl.style.background = `url(images/${getTime(obj.timezone)}/${obj.weather.toLowerCase()}.jpg)`;
     }
 
     searchFormEl.addEventListener('submit', event => {
