@@ -97,13 +97,13 @@ button[type="submit"] {
     border-radius: 1rem;
     background: rgba(255,255,255,.2);
     backdrop-filter: blur(4rem);
-    padding: 4rem 4rem 6rem;
+    padding: 5rem;
 }
 
 /* weather-temp */
 .weather-temp-icon {
     font-size: 7rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
     line-height: .5;
 }
 

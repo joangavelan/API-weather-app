@@ -62,11 +62,48 @@ const App = (() => {
             humidity: weatherObj.main.humidity,
             wind: toKmh(weatherObj.wind.speed),
         }
-        console.log(weather);
         return weather;
     }
 
+    const getIcon = (timezone, weather) => {
+        weather = weather.toLowerCase();
+        //finding out what time is it to set day or night icon
+        const hour = +(timezone.slice(0, 2).replace(':', ''));
+        const time = (hour >= 6 && hour <= 19) ? 'day' : 'night';
+        //formatting to get valid weather name for icons
+        switch(weather) {
+            case 'clouds':
+                weather = 'cloudy';
+                break;
+            case 'drizzle': 
+                weather = 'sprinkle';
+                break;
+            case 'squall':
+            weather = 'showers';
+            break;  
+            case 'mist':
+            case 'haze':
+                weather = 'fog';
+                break; 
+            case 'clear':
+                weather = (time === 'night') ? weather : 'sunny';
+                break;
+            case 'smoke':
+                return `<i class="wi wi-smoke">`; 
+            case 'dust':
+                return `<i class="wi wi-dust">`;
+            case 'sand':
+                return `<i class="wi wi-sandstorm">`;
+            case 'ash':
+                return `<i class="wi wi-volcano">`;
+            case 'tornado':
+                return `<i class="wi wi-tornado">`;
+        }
+        return `<i class="wi wi-${time}-${weather}">`;
+    }
+
     const setData = (obj) => {
+        tempIcon.innerHTML = getIcon(obj.timezone, obj.weather);
         tempEl.innerHTML = obj.temperature;
         cityEl.innerHTML = `${obj.city}`;
         countryEl.innerHTML = `,${obj.country}`;
@@ -84,6 +121,6 @@ const App = (() => {
                     setData(weather);
                 });
             searchEl.value = '';
-        } 
+        }; 
 })
 })();
