@@ -20,7 +20,7 @@ const App = (() => {
     const errorMessageEl = document.querySelector('.error-message');
     //API
     const API_KEY = '97d38a2a2be5d12785fe434a802ee283';
-    const API_ENDPOINT = 'http://api.openweathermap.org';
+    const API_ENDPOINT = 'https://api.openweathermap.org';
 
     //displays error message
     const errorMessage = () => {
