@@ -14,10 +14,12 @@
 
 html {
     font-size: 62.5%;
+    min-height: -webkit-fill-available;
 }
 
 body {
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     line-height: 1.45;
     font-family: var(--main-font-stack);
     color: var(--clear);
@@ -27,7 +29,7 @@ body {
 .container {
     display: flex;
     flex-flow: column;
-    height: 100vh;
+    height: 100%;
     background-size: cover;
     background-position: center;
     transition: background 1s ease-in-out;
