@@ -1,4 +1,4 @@
-//convert temp from kelvin to celsius
+//converts temp from kelvin to celsius
 export const toCelsius = (num) => Math.round(num - 273.1);
 //converts wind speed from m/s to km/h
 export const toKmh = (num) => +((num * 3.6).toFixed(1));
@@ -8,5 +8,5 @@ export const getTime = (timezone) => {
     const time = (hour >= 6 && hour <= 19) ? 'day' : 'night';
     return time;
 };
-//get valid url image
+//gets valid url image
 export const getImageUrl = (timezone, weather) => `url(images/${getTime(timezone)}/${weather.toLowerCase()}.jpg)`;
