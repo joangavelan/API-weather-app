@@ -96,17 +96,19 @@ button[type="submit"] {
     align-items: center;
 }
 
-.main-content {
+.content {
     width: 90rem;
     max-width: 100%;
     font-size: 2rem;
     text-align: center;
     margin: 2rem;
-    margin-top: 12rem;
-    border-radius: 1rem;
-    background: rgba(255,255,255,.2);
-    backdrop-filter: blur(4rem);
+    margin-top: 10rem;
     padding: 5rem;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    background: rgba(255,255,255,.2);
+    background-clip: padding-box;
+    backdrop-filter: blur(4rem);
 }
 
 /* weather-temp */
@@ -179,8 +181,8 @@ button[type="submit"] {
         padding: 2rem;
     }
 
-    .main-content {
-        margin-top: 5rem;
+    .content {
+        margin-top: 4rem;
     }
 
     .weather-data {
