@@ -6,10 +6,10 @@ export const getTimezone = (seconds) => {
         if(offset >= 0) date.setMinutes(date.getMinutes() + offset);
         else date.setMinutes(date.getMinutes() - Math.abs(offset));
     }
-    //setting up UTC timezone
+    //UTC timezone
     const UTC_OFFSET = date.getTimezoneOffset();
     setTimezone(UTC_OFFSET);
-    //setting up aim city timezone
+    //getting aim city timezone from UTC 
     setTimezone(MIN_OFFSET);
 
     const months = ['January', 'February','March','April','May','June','July','August','September','October','November','December'];
