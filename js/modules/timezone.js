@@ -1,4 +1,4 @@
-//gets timezone by seconds
+//gets timezone from seconds
 export const getTimezone = (seconds) => {
     const date = new Date();
     const MIN_OFFSET = seconds / 60;
