@@ -2,7 +2,7 @@
 export const getTimezone = (seconds) => {
     const date = new Date();
     const MIN_OFFSET = seconds / 60;
-    //sets date object to a specific timezone taking min-offset as a parameter
+    //sets date object to a specific timezone taking min offset as a parameter
     const setTimezone = (offset) => {
         if(offset >= 0) date.setMinutes(date.getMinutes() + offset);
         else date.setMinutes(date.getMinutes() - Math.abs(offset));
